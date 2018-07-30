@@ -44,10 +44,12 @@ function showGifs() {
         method: "GET"
     }).then(function(response) {
         var numberGifs = response.data;
+        //empties previous gifs
+        document.getElementById("gifDisplayArea").innerHTML = "";
         //shows the gif box
         document.getElementById("gifHeading").style.display = "block";
         //gets the title, gif image, and url and puts them in a div which is then added to a table
-        for (var i = 0; i < numberGifs.length / 2; i += 2) {
+        for (var i = 0; i < numberGifs.length; i += 2) {
             var newDiv = document.createElement("DIV");
             var newRow = document.createElement("TR");
             var newTD1 = document.createElement("TD");
