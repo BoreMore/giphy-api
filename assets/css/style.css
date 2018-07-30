@@ -1,19 +1,19 @@
 h1 {
     color: black;
-    font-family: "impact";
+    font-family: impact;
     font-size: 38px;
 }
 div {
     text-align: center;
 }
-a {
+.footerLink {
     color: powderblue;
 }
-a:hover {
+.footerLink:hover {
     text-decoration: none;
     color: lightgreen;
 }
-a:active {
+.footerLink:active {
     text-decoration: none;
     color: lightpink;
 }
@@ -26,9 +26,6 @@ a:active {
     position: relative;
     font-size: 15px;
 }
-#logo {
-    margin: 0px 5px 0px 0px;
-}
 .panel-heading {
     font-family: "arial black";
 }
@@ -37,4 +34,49 @@ a:active {
 }
 .gifButtons {
     margin: 5px;
+}
+h3 {
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    max-width: 525px;
+    min-width: 525px; 
+    text-align: center;
+    float: center;
+    position: relative;
+    margin: 5px 15px 5px 15px;
+}
+img {
+    padding: 10px;
+    max-width: 525px;
+    float: center;
+}
+tr:not(:last-child) {
+    border-bottom: 1px solid #bce8f1;
+}
+a {
+    text-decoration: none;
+    color: #0080ff
+}
+a:hover {
+    text-decoration: none;
+    color: #00ccff;
+}
+a:active {
+    text-decoration: none;
+    color: #00ff99;
+}
+table {
+    min-width: 100%;
+}
+body {
+    background-color: whitesmoke;
+}
+td:not(:first-child) {
+    border-left: 1px solid #bce8f1;
+}
+tr {
+    min-width: 100%;
+}
+#logo {
+    margin: -5px;
 }

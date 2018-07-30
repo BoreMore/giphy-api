@@ -8,43 +8,42 @@
 </head>
 <body>
 <nav class="navbar bg-primary">
-    <h1 class="text-center"><a id="logo" href="https://giphy.com/" target="blank_"><img src="assets/images/giphy_logo.png"></a>GIPHY API</h1>
+    <h1 class="text-center"><a id="logo" href="https://giphy.com/" target="blank_"><img src="assets/images/gif.gif"></a>GIPHY API</h1>
 </nav>
 <section>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="col-md-4">
-                <div class="panel panel-info">
-                    <div class="panel-heading">BUTTONS</div>
-                    <div id="gifButtonsDiv" class="panel-body">
+            <div class="panel panel-info">
+                <div class="panel-heading">BUTTONS</div>
+                <div id="gifButtonsDiv" class="panel-body">
 
-                    </div>
-                    <div class="panel-body">
-                        <form>
-                            <input id="buttonValue" class="form-control" type="text" placeholder="Enter a GIF to find">
-                            <input id="submitGifButton" class="btn btn-primary btn-block" type="button" onclick="addButtons()" value="Add GIF">
-                        </form>
-                    </div>
                 </div>
-            </div>    
-            <div class="col-md-8">
-                <div class="panel panel-info">
-                    <div class="panel-heading">GIFS</div>
-                    <div id="gifDisplayArea" class="panel-body">
-                        
-                    </div>
+                <div class="panel-body">
+                    <input id="buttonValue" class="form-control" type="text" placeholder="Enter a GIF to find" onkeydown="enter()">
+                    <input id="submitGifButton" class="btn btn-primary btn-block" type="button" onclick="addButtons()" value="Add GIF">
                 </div>
             </div>
-        </div>
+        </div>   
     </div>
+    <div class="row"> 
+        <div class="col-md-12">
+            <div class="panel panel-info" id="gifHeading">
+                <div class="panel-heading">GIFS</div>
+                <table id="gifDisplayArea" class="table-responsive">
+                        
+                </table>
+            </div>
+        </div>
+    </div>    
 </div>
 </section>
+<br>
 <section>
 <div class="footer">
     <br>
-    <p>Created by <a href="https://github.com/BoreMore" target="_blank">BoreMore</a></p>
-    <p>Powered by <a href="https://giphy.com/" target="_blank">GIPHY</a></p>
+    <p>Created by <a class="footerLink" href="https://github.com/BoreMore" target="_blank">BoreMore</a></p>
+    <p>Powered by <a class="footerLink" href="https://giphy.com/" target="_blank">GIPHY</a></p>
     <br>
 </div>
 </section>
