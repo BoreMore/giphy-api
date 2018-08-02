@@ -38,8 +38,7 @@ div {
 h3 {
     padding: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    max-width: 525px;
-    min-width: 525px; 
+    width: 525px;
     text-align: center;
     float: center;
     position: relative;
@@ -79,4 +78,9 @@ tr {
 }
 #logo {
     margin: -5px;
+}
+@media only screen and (max-width: 600px) {
+    h3 {
+        width: 150px;
+    }
 }

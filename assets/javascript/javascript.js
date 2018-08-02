@@ -48,7 +48,46 @@ function showGifs() {
         document.getElementById("gifDisplayArea").innerHTML = "";
         //shows the gif box
         document.getElementById("gifHeading").style.display = "block";
-        //gets the title, gif image, and url and puts them in a div which is then added to a table
+        //changes layout for phones
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+            //gets the title, gif image, and url and puts them in a div which is then added to a table
+            for (var i = 0; i < numberGifs.length; i++) {
+            var newDiv = document.createElement("DIV");
+            var newRow = document.createElement("TR");
+            var newTD1 = document.createElement("TD");
+            var link = document.createElement("A");
+            link.setAttribute("href", numberGifs[i].url);
+            link.setAttribute("target", "_blank");
+            var title = document.createElement("H3");
+            var titleText = document.createTextNode(numberGifs[i].title.toUpperCase());
+            //if gifs have no title or only spaces as the title display this
+            if (numberGifs[i].title.trim() === "") {
+                titleText = document.createTextNode("(NO TITLE FOUND)")
+            }
+            link.appendChild(titleText);
+            title.appendChild(link);
+            var image = document.createElement("IMG");
+            image.setAttribute("src", numberGifs[i].images.fixed_height_still.url);
+            image.setAttribute("gifStillURL", numberGifs[i].images.fixed_height_still.url);
+            image.setAttribute("gifAnimatedURL", numberGifs[i].images.fixed_height.url)
+            image.setAttribute("animationStatus", "still");
+            image.setAttribute("class", "gifImage")
+            image.setAttribute("height", "220px");
+            image.style.maxWidth = "100%";
+            title.style.maxWidth = "100%";
+            title.style.float = "center";
+            title.style.margin = "0px";
+            title.style.marginLeft = "25%";
+            //title.style.marginRight = "75%";
+
+            //adds all the elements above together
+            newDiv.appendChild(title);
+            newDiv.appendChild(image);
+            newTD1.appendChild(newDiv);
+            newRow.appendChild(newTD1);
+            document.getElementById("gifDisplayArea").insertBefore(newRow, document.getElementById("gifDisplayArea").childNodes[0]);
+        }
+        } else {
         for (var i = 0; i < numberGifs.length; i += 2) {
             var newDiv = document.createElement("DIV");
             var newRow = document.createElement("TR");
@@ -104,6 +143,7 @@ function showGifs() {
             newRow.appendChild(newTD1);
             newRow.appendChild(newTD2);
             document.getElementById("gifDisplayArea").insertBefore(newRow, document.getElementById("gifDisplayArea").childNodes[0]);
+        }
         }
     })
 }
